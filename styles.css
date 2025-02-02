@@ -8,6 +8,8 @@ body{
 
 }
 
+
+
 header{
 
   background-color: #333;
@@ -106,6 +108,30 @@ main{
   margin-right: 5px;
 
 }
+
+.loginpanel {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.loginbackground {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  background-color: #333;
+  justify-content: center;
+}
+
+.register_top {
+  color: #fff;  
+}
+
+.inputgroup {
+  color: #fff; 
+}
+
 
 footer{
 
