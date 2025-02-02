@@ -19,6 +19,10 @@ header{
 
 }
 
+anchor{
+  color: #fff;
+}
+
 header h1{
 
   margin: 0;
@@ -111,20 +115,53 @@ main{
 
 .loginpanel {
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  display:flex;
+  justify-content:center;
 }
+
 .loginbackground {
   width: 350px;
   height: 400px;
-  display: flex;
   background-color: #333;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.register_top {
+
+.inputgroup {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registerlink {
+  margin-top: 10px;
+  margin-right: 190px;
+}
+
+.loginbuttonholder {
+  margin-top: 30px;
+}
+
+.loginbutton {
+  width: 100px;
+  height: 30px;
+}
+
+
+.password{
+  margin-top: 40px
+}
+
+.passwordbox {
+  margin-left: 3px;
+}
+
+
+.login_top {
+  display: flex;
   color: #fff;  
 }
 
