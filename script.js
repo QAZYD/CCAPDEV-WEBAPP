@@ -65,52 +65,56 @@ const users = [
   
   // function to display a single post and its comments (post)
 
-  function displayPostDetails(){
-
-    const postId = new URLSearchParams( window.location.search ).get("id");
-    const post = posts.find( ( p ) => p.id === parseInt( postId ) );
+  function displayPostDetails() {
+    const postId = new URLSearchParams(window.location.search).get("id");
+    const post = posts.find((p) => p.id === parseInt(postId));
   
-    if( post ){
-
+    if (post) {
       const postDetailsSection = document.getElementById("post-details");
       postDetailsSection.innerHTML = `
-        <h2>${post.title}</h2>
-        <div class="meta">
-          Posted by ${post.author.username} on ${post.date}
-        </div>
-        <div class="tags">
-          ${post.tags.map( ( tag ) => `<span>${tag}</span>`).join("")}
-        </div>
-        <p>${post.body}</p>
-        <div class="votes">
-          <button onclick="upvotePost(${post.id})">👍 ${post.upvotes}</button>
-          <button onclick="downvotePost(${post.id})">👎 ${post.downvotes}</button>
+        <div class="post-details">
+          <h2 class="post-title">${post.title}</h2>
+          <div class="post-meta">
+            Posted by <span class="post-author">${post.author.username}</span> on 
+            <span class="post-date">${post.date}</span>
+          </div>
+          <hr class= "post-divider">
+          <div class="post-tags">
+            ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+          </div>
+            
+          <p class="post-body">${post.body}</p>
+          <div class="post-votes">
+            <button class="upvote-btn" onclick="upvotePost(${post.id})">👍 ${post.upvotes}</button>
+            <button class="downvote-btn" onclick="downvotePost(${post.id})">👎 ${post.downvotes}</button>
+          </div>
         </div>
       `;
   
       const commentsSection = document.getElementById("comments");
       commentsSection.innerHTML = `
-        <h2>Comments (${post.comments.length})</h2>
-        ${post.comments
-          .map(
-            (comment) => `
-          <div class="comment">
-            <div class="meta">
-              ${comment.author.username} on ${comment.date}
-            </div>
-            <p>${comment.body}</p>
-          </div>
-        `
-          )
-          .join("")}
+        <div class="comments-section">
+          <h2 class="comments-title">Comments (${post.comments.length})</h2>
+          ${post.comments
+            .map(
+              (comment) => `
+              <div class="comment">
+                <div class="comment-meta">
+                  <span class="comment-author">${comment.author.username}</span> on 
+                  <span class="comment-date">${comment.date}</span>
+                </div>
+                <p class="comment-body">${comment.body}</p>
+              </div>
+            `
+            )
+            .join("")}
+        </div>
       `;
-    }else{
-
-      document.getElementById("post-details").innerHTML = "<p>Post not found.</p>";
-
+    } else {
+      document.getElementById("post-details").innerHTML = "<p class='error-message'>Post not found.</p>";
     }
-
   }
+  
   
   // initial display of posts on homepage
   if( window.location.pathname.endsWith("index.html") || window.location.pathname === "/"){
