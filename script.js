@@ -93,10 +93,17 @@ const users = [
 
   const toggleButton = document.getElementById('toggle-button');
   const sidebar = document.getElementById('sidebar');
-
+  const searchBar = document.querySelector('#topbar .search-bar');
   function toggleSidebar(){
     sidebar.classList.toggle('close');
+    if (sidebar.classList.contains('close')) {
+      searchBar.style.marginLeft = "80px"; // Adjust for collapsed sidebar
+  } else {
+      searchBar.style.marginLeft = "260px"; // Adjust for expanded sidebar
   }
+  }
+
+  
   
   // function to display posts on homepage
   function displayPosts( filteredPosts ){
