@@ -27,6 +27,36 @@ const users = [
       ],
     },
 
+    {
+      id: 1,
+      title: "Discovering Ancient Fossils",
+      body: "A recent excavation in Morocco revealed fascinating fossils...",
+      author: users[0],
+      date: "2024-10-01",
+      tags: ["fossils", "Morocco"],
+      upvotes: 10,
+      downvotes: 2,
+      comments: [
+        { id: 1, author: users[1], body: "Great find!", date: "2024-10-02" },
+        { id: 2, author: users[2], body: "Where exactly was this?", date: "2024-10-03" },
+      ],
+    },
+
+    {
+      id: 1,
+      title: "Discovering Ancient Fossils",
+      body: "A recent excavation in Morocco revealed fascinating fossils...",
+      author: users[0],
+      date: "2024-10-01",
+      tags: ["fossils", "Morocco"],
+      upvotes: 10,
+      downvotes: 2,
+      comments: [
+        { id: 1, author: users[1], body: "Great find!", date: "2024-10-02" },
+        { id: 2, author: users[2], body: "Where exactly was this?", date: "2024-10-03" },
+      ],
+    },
+
     // we add the 4 more posts here
 
   ];
@@ -46,6 +76,7 @@ const users = [
         <div class="meta">
           Posted by ${post.author.username} on ${post.date}
         </div>
+        <hr class= "post-divider">
         <div class="tags">
           ${post.tags.map((tag) => `<span>${tag}</span>`).join("")}
         </div>
