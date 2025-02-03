@@ -51,8 +51,8 @@ const users = [
         </div>
         <p>${post.body}</p>
         <div class="votes">
-          <button onclick="upvotePost(${post.id})">👍 ${post.upvotes}</button>
-          <button onclick="downvotePost(${post.id})">👎 ${post.downvotes}</button>
+          <button class = "upvote-btn" onclick="upvotePost(${post.id})">👍 ${post.upvotes}</button>
+          <button  class = "downvote-btn" onclick="downvotePost(${post.id})">👎 ${post.downvotes}</button>
         </div>
         <a href="post.html?id=${post.id}">Read more...</a>
       `;
@@ -70,6 +70,8 @@ const users = [
     const post = posts.find((p) => p.id === parseInt(postId));
   
     if (post) {
+      const voteKey = `vote_${postId}`;
+      const userVote = localStorage.getItem(voteKey);
       const postDetailsSection = document.getElementById("post-details");
       postDetailsSection.innerHTML = `
         <div class="post-details">
@@ -131,10 +133,22 @@ const users = [
   }
   
   // upvote and downvote (depends on whether you guys want to make the upvote and downvote only limited once to one person and for it to update)
+  const userVotes = {};
   function upvotePost( postId ){
 
     const post = posts.find( ( p ) => p.id === postId );
-    post.upvotes++;
+
+    if(userVotes[postId] === 'downvoted'){
+      post.downvotes--;
+      post.upvotes++;
+      userVotes[postId] = 'upvoted';
+    }else if(userVotes[postId] !== 'upvoted'){
+      post.upvotes++;
+      userVotes[postId] = 'upvoted';
+    }else if(userVotes[postId] === 'upvoted'){
+      post.upvotes--;
+      userVotes[postId] = 'none';
+    }
 
     if( window.location.pathname.endsWith("index.html") || window.location.pathname === "/"){
 
@@ -151,7 +165,27 @@ const users = [
   function downvotePost( postId ){
 
     const post = posts.find( ( p ) => p.id === postId );
-    post.downvotes++;
+    
+    if(userVotes[postId] === 'upvoted'){
+      post.upvotes--;
+      post.downvotes++;
+      userVotes[postId] = 'downvoted';
+
+    }
+
+    else if(userVotes[postId] !== 'downvoted'){
+      post.downvotes++;
+      userVotes[postId] = 'downvoted';
+
+    }
+
+    else if(userVotes[postId] === 'downvoted'){
+      post.downvotes--;
+      userVotes[postId] = 'none';
+    }
+
+   
+
 
     if( window.location.pathname.endsWith("index.html") || window.location.pathname === "/"){
 
