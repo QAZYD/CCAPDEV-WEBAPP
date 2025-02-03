@@ -92,6 +92,16 @@ main{
   margin-left: 47.6px;
 }
 
+#username{
+  border: 1.5px solid #313131;
+  border-radius: 10px;
+}
+
+#password{
+  border: 1.5px solid #313131;
+  border-radius: 10px;
+}
+
 .post{
 
   background-color: #fff;
@@ -161,12 +171,14 @@ main{
   margin-top: 50px;
   display:flex;
   justify-content:center;
+  
 }
 
 .loginbackground {
   width: 350px;
   height: 400px;
-  background-color: #333;
+  border: 3px solid #313131;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,6 +209,13 @@ main{
   align-items: center;
 }
 
+.username {
+  color: #000000;
+}
+
+.password{
+  color: #000000;
+}
 .registerlink {
   margin-top: 10px;
   margin-right: 190px;
@@ -207,8 +226,11 @@ main{
 }
 
 .loginbutton {
+  color: #fff;
+  background-color: #313131;
   width: 100px;
   height: 30px;
+  border-radius: 30px;
 }
 
 
@@ -224,12 +246,12 @@ main{
 
 .login_top {
   display: flex;
-  color: #fff;  
+  color: #000000;  
 }
 
 .register_top {
   display: flex;
-  color: #fff;  
+  color: #000000;  
 }
 
 .inputgroup {
