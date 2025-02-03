@@ -115,6 +115,8 @@ const users = [
 
       const postElement = document.createElement("div");
       postElement.className = "post";
+
+      
       postElement.innerHTML = `
         <h2>${post.title}</h2>
         <div class="meta">
@@ -209,6 +211,8 @@ const users = [
   
   // upvote and downvote (depends on whether you guys want to make the upvote and downvote only limited once to one person and for it to update)
   const userVotes = {};
+  const upvoteBtn = document.querySelector('upvote-btn');
+  const downvoteBtn = document.querySelector('downvote-btn');
   function upvotePost( postId ){
 
     const post = posts.find( ( p ) => p.id === postId );
@@ -244,6 +248,7 @@ const users = [
     if(userVotes[postId] === 'upvoted'){
       post.upvotes--;
       post.downvotes++;
+
       userVotes[postId] = 'downvoted';
 
     }
