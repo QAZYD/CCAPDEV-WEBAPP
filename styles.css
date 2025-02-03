@@ -76,6 +76,22 @@ main{
 
 }
 
+#email {
+  margin-left: 78px;
+}
+
+#username2 {
+  margin-left: 44px;
+}
+
+#phonenumber{
+  margin-left: 10px;
+}
+
+#passwordbox{
+  margin-left: 47.6px;
+}
+
 .post{
 
   background-color: #fff;
@@ -128,6 +144,23 @@ main{
   align-items: center;
 }
 
+.registerpanel {
+  margin-top: 50px;
+  display:flex;
+  justify-content:center;
+}
+
+.registerbackground {
+  width: 350px;
+  height: 400px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
 
 .inputgroup {
   margin-top: 20px;
@@ -155,6 +188,7 @@ main{
   margin-top: 40px
 }
 
+
 .passwordbox {
   margin-left: 3px;
 }
@@ -165,9 +199,41 @@ main{
   color: #fff;  
 }
 
+.register_top {
+  display: flex;
+  color: #fff;  
+}
+
 .inputgroup {
   color: #fff; 
 }
+
+.registerinputgroup {
+  color: #fff; 
+}
+
+.username2{
+  margin-top: 15px;
+}
+
+.email2{
+  margin-top: 25px;
+}
+
+.password2{
+  margin-top: 25px;
+}
+
+.phonenumber2{
+  margin-top: 25px;
+}
+
+.button2{
+  margin-top: 25px;
+}
+
+
+
 
 
 footer{
