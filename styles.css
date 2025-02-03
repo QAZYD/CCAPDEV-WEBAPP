@@ -160,8 +160,6 @@ main{
 }
 
 
-
-
 .inputgroup {
   margin-top: 20px;
   display: flex;
@@ -210,7 +208,11 @@ main{
 
 .registerinputgroup {
   color: #fff; 
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 }
+
 
 .username2{
   margin-top: 15px;
@@ -228,8 +230,15 @@ main{
   margin-top: 25px;
 }
 
-.button2{
-  margin-top: 25px;
+
+
+.registerbuttonholder{
+  margin-top: 30px;
+}
+
+.registerbutton{
+  width: 100px;
+  height: 30px;
 }
 
 
